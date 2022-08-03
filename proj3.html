@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .letter{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 80px;
+            transition: all 1s linear;
+
+        }
+
+
+   
+        .sloww{
+            background-color: blueviolet;
+            transform: scale(3);
+
+
+        }
+    </style>
+</head>
+<body>
+    <h1> Final project </h1>
+
+
+
+    <script>
+        var final = document.querySelector("h1")
+        let html = ""      
+        var letters = final.innerText.split('')
+
+
+        letters.forEach(
+            letter => {
+        let classess = ''
+        if(letter !== ' '){
+            classess = 'letter js-see'
+            html = html + `<span class = '${classess}'>${letter} </span>`
+        }
+            }
+        )
+        final.innerHTML = html
+
+        const all = document.querySelectorAll(".letter")
+        all.forEach(see => {
+            see.addEventListener('mouseover', function(event){
+                this.classList.add("sloww")
+            })
+        })
+
+        all.forEach(see => {
+            see.addEventListener('mouseout', function(event){
+                this.classList.remove("sloww")
+            })
+        })
+
+        
+    </script>
+</body>
