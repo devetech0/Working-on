@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+        html,body{
+            height: 100%;
+        }
+        body{
+            background-color:rgba(112, 128, 144, 0.9) ;
+            overflow: hidden;
+            
+        }
+        .thebody{
+            width: 400px;
+            height: 500px;
+            background-color: rgb(56, 23, 25);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .header{
+            position: absolute;
+            top: 10px;
+            left: 8px;
+            width: 95%;
+            height:45px;
+            padding-top: 2px;
+            font-size:xx-large;
+            font-weight: 600;
+            box-sizing: border-box;
+            text-align: right;
+            border: 1px solid black;   
+            box-shadow: inset 6px 6px 16px rgba(112, 128, 144, 0.4) , 3px 4px 0px rgba(0, 0, 0,0.3);
+            border-radius: 3px;
+
+1        }
+        ul li{
+            float: left;
+            list-style: none;
+            height: 60px;
+            width: 70px;
+            background-color: rgba(66, 9, 86, 0.9);
+            margin: 6px;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+            color: antiquewhite;
+            font-size: larger;
+            font-family: 'Roboto Slab', serif;
+            box-shadow: inset 3px 5px 0px rgba(59, 55, 55, 0.3),3px 5px 0px rgba(59, 55, 55, 0.3) ;
+           }
+        ul li:hover  {
+            box-shadow: none;
+            
+        } 
+        ul{
+            position: absolute;
+            top: 50px;
+
+        }
+        li:nth-child(16){
+            height: 130px;
+            text-align: center;
+        }
+        li:nth-child(17){
+              width: 120px;
+              margin-top: -64px;
+        }
+        li:last-child{
+            width: 103px;
+              margin-top: -64px;
+        }
+    </style>
+</head>
+<body>
+    <div class="thebody">
+        <div class="header"></div>
+            <ul>
+                <li>AC</li>
+                <li>+</li>
+                <li>-</li>
+                <li>*</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>%</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>/</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>=</li>
+                <li>0</li>
+                <li>.</li>
+            </ul>
+        
+    </div>
+
+
+    <script>
+        var header = document.querySelector(".header")
+        var lis = document.querySelectorAll("li")
+
+        lis.forEach(list => {
+            list.addEventListener('click', function(event){
+             const listt = list.innerText
+             const head = header.innerText
+             
+
+             if(listt == '='){
+                solution = eval(head )
+
+                header.innerText = solution
+                return true
+             }
+             
+             if(listt == "AC"){
+                header.innerText = " "
+                return true;
+                
+             }
+
+           
+           
+             header.append(listt)
+            })
+        })
+        
+    </script>
+</body>
+</html>  
