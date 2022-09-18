@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <div>      
+       <label for=""> Background Color</label> 
+       <input type="text" class="bg-color" stye=" border: 3px solid teal; height: 100px; width:100px;">
+    </div>
+
+   <div>
+      <label for=""> Text Color</label>
+      <input type="text" class="text" stye=" border: 3px solid teal; height: 100px; width:100px;">
+   </div>
+   <div>
+      <label for="">Font Size</label>
+      <input type="text" class="font" stye=" border: 3px solid teal; height: 100px; width:100px;">
+   </div>
+
+    <script>
+        var bgcolor = document.querySelector(".bg-color")
+        var text = document.querySelector(".text")
+        var font = document.querySelector(".font")
+        var body = document.querySelector("body")
+
+        bgcolor.addEventListener('keyup', function(event){
+            body.style.backgroundColor = event.target.value
+            
+        })
+        text.addEventListener('keyup', function(event){
+            body.style.color = event.target.value
+        })
+        font.addEventListener('keyup', function(event){
+            body.style.fontSize = event.target.value
+        })
+
+    </script>
+</body>
+</html>
